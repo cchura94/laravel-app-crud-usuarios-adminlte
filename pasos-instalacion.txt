@@ -1,0 +1,13 @@
+1. copiar .env.example y renombrar (.env)
+
+2. composer update
+
+3. Generar el APP_KEY ubicado en el archivo (.env)
+    > php artisan key:generate
+
+4. generar las tablas con las migraciones por defecto de Laravel
+    > php artisan migrate
+5. Para las vistas 
+    > npm install
+6. Transpilar el codigo
+    > npm run build
