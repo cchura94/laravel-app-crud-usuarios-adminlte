@@ -23,7 +23,7 @@
                 <li class="nav-item"><a class="nav-link" href="/servicios">Servicios</a></li>
                 <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                <li class="nav-item"><a class="btn btn-primary ms-2" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="btn btn-primary ms-2" href="/login">Login</a></li>
             </ul>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
@@ -65,9 +66,11 @@ Route::get("/nombre/{n}/edad/{edad}", function($nom, $e){
 });
 
 // rutas con retorno de Vistas
+/*
 Route::get('/login', function(){
     return view('ingresar');
 });
+*/
 
 // rutas con controladores
 Route::get("/", [WebController::class, "funInicio"]);
@@ -89,10 +92,14 @@ Route::middleware('auth')->group(function(){
     Route::delete('/usuario/{id}', [UsuarioController::class, "funEliminar"]);
     
     Route::resource("/producto", ProductoController::class);
+
+    // asignar un permiso a un role
+    Route::post("/role/{id}/permiso", [RoleController::class, "funAsignarPermiso"]);
+    Route::resource("role", RoleController::class);
 });
 
 
 
-Auth::routes();
+Auth::routes(["register" => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
